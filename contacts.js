@@ -14,7 +14,8 @@ async function listContacts() {
 
 async function getContactById(contactId) {
   const contacts = await listContacts();
-  return contacts.find((contact) => contact.id === contactId);
+  const result = contacts.find((contact) => contact.id === contactId);
+  return result || null;
 }
 
 async function removeContact(contactId) {
@@ -25,11 +26,12 @@ async function removeContact(contactId) {
     );
     if (contactIndex === -1) {
       console.log("Sorry, we can not find this contact");
-      return;
+      return null;
     }
-    const result = contacts.splice(contactIndex, 1);
+    const [result] = contacts.splice(contactIndex, 1);
     await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
     console.log("Contact deleted successfully");
+    return result;
   } catch (error) {
     console.error("Error when deleting contact", error.massage);
   }
@@ -50,11 +52,12 @@ async function addContact(name, email, phone) {
     );
     if (existingContact) {
       console.log("contact is already exist");
-      return;
+      return null;
     }
     contacts.push(newContacts);
     await fs.writeFile(contactsPath, JSON.stringify(contacts, null, 2));
     console.log("Contact added successfully");
+    return newContacts;
   } catch (error) {
     console.error("Error adding contact", error.massage);
   }
