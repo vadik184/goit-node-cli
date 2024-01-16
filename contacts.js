@@ -13,9 +13,18 @@ async function listContacts() {
 }
 
 async function getContactById(contactId) {
-  const contacts = await listContacts();
-  const result = contacts.find((contact) => contact.id === contactId);
-  return result || null;
+  try {
+    const contacts = await listContacts();
+    const result = contacts.find((contact) => contact.id === contactId);
+    if (result) {
+      return result;
+    } else {
+      console.log("We can't find this contact");
+      return null;
+    }
+  } catch (error) {
+    console.error(error.massage);
+  }
 }
 
 async function removeContact(contactId) {

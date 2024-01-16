@@ -7,8 +7,4 @@ node index.js --action list
 
 ```
 
-<!-- ![example] -->
-
-```
-
-```
+![example-1] (./imgForReadme/contactList.png)
