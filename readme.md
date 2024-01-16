@@ -4,6 +4,8 @@
 
 '''bash
 node index.js --action list
-``
+
+```
 
 <!-- ![example] -->
+```
