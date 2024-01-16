@@ -19,7 +19,7 @@ node index.js -a get -i 05olLMgyVQdWRwgKfg5J6
 
 ## Додавання контактів
 
-````bash
+```bash
 node index.js -a add -n Mango -e mango@gmail.com -p 322-22-22
 
 ```
@@ -30,6 +30,6 @@ node index.js -a add -n Mango -e mango@gmail.com -p 322-22-22
 
 ```bash
 node index.js -a remove -i jnABNMvTXDq5BELiDmIHy
-````
+```
 
 ![sample-4](./imgForReadme/remove.png)
