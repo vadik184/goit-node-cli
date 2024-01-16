@@ -2,10 +2,13 @@
 
 ## отримуємо та виводим список контактів
 
-'''bash
+```bash
 node index.js --action list
 
 ```
 
 <!-- ![example] -->
+
+```
+
 ```
